@@ -1,6 +1,6 @@
 local EternalLib = {}
 
-function EternalLib:CreateWindow()
+function EternalLib:CreateWindow(TitleText)
     local EternalX = Instance.new("ScreenGui")
     local EternalXMain = Instance.new("Frame")
     local UICorner = Instance.new("UICorner")
@@ -62,7 +62,7 @@ function EternalLib:CreateWindow()
     GameTitleText.Position = UDim2.new(0.00076923077, 0, 0.0232558139, 0)
     GameTitleText.Size = UDim2.new(0, 152, 0, 44)
     GameTitleText.Font = Enum.Font.GothamBlack
-    GameTitleText.Text = "Eternal X"
+    GameTitleText.Text = TitleText
     GameTitleText.TextColor3 = Color3.fromRGB(240, 240, 240)
     GameTitleText.TextSize = 20.000
     
