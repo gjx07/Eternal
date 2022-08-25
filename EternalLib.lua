@@ -23,10 +23,7 @@ function EternalLib:CreateWindow(TitleText)
     local TextLabel = Instance.new("TextLabel")
     local TextLabel_2 = Instance.new("TextLabel")
     local settings = Instance.new("ImageButton")
-    local TabHolder = Instance.new("ScrollingFrame")
-    local UIPadding = Instance.new("UIPadding")
-    local UIListLayout = Instance.new("UIListLayout")
-    local TabText = Instance.new("TextLabel")
+
     
     --Properties:
     
@@ -67,7 +64,7 @@ function EternalLib:CreateWindow(TitleText)
     GameTitleText.Position = UDim2.new(0.00076923077, 0, 0.0232558139, 0)
     GameTitleText.Size = UDim2.new(0, 152, 0, 44)
     GameTitleText.Font = Enum.Font.GothamBlack
-    GameTitleText.Text = "Eternal X"
+    GameTitleText.Text = TitleText
     GameTitleText.TextColor3 = Color3.fromRGB(240, 240, 240)
     GameTitleText.TextSize = 20.000
     
@@ -173,35 +170,6 @@ function EternalLib:CreateWindow(TitleText)
     settings.ImageRectOffset = Vector2.new(324, 124)
     settings.ImageRectSize = Vector2.new(36, 36)
     
-    TabHolder.Name = "TabHolder"
-    TabHolder.Parent = EternalXMain
-    TabHolder.Active = true
-    TabHolder.BackgroundColor3 = Color3.fromRGB(32, 32, 32)
-    TabHolder.BorderColor3 = Color3.fromRGB(32, 32, 32)
-    TabHolder.Position = UDim2.new(0.00153846154, 0, 0.096926488, 0)
-    TabHolder.Size = UDim2.new(0.232000008, 0, 0.902446985, -50)
-    TabHolder.ZIndex = -1
-    TabHolder.CanvasSize = UDim2.new(0, 0, 0, 690)
-    TabHolder.ScrollBarThickness = 6
-    
-    UIPadding.Parent = TabHolder
-    UIPadding.PaddingBottom = UDim.new(0, 8)
-    UIPadding.PaddingTop = UDim.new(0, 8)
-    
-    UIListLayout.Parent = TabHolder
-    UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-    
-    TabText.Name = "TabText"
-    TabText.Parent = TabHolder
-    TabText.BackgroundTransparency = 1.000
-    TabText.Position = UDim2.new(0, 35, 0, 0)
-    TabText.Size = UDim2.new(1, 0, 0, 30)
-    TabText.Font = Enum.Font.GothamMedium
-    TabText.Text = "Community FE"
-    TabText.TextColor3 = Color3.fromRGB(240, 240, 240)
-    TabText.TextSize = 14.000
-    TabText.TextTransparency = 0.400
-    TabText.TextXAlignment = Enum.TextXAlignment.Left
     
     -- Scripts:
     
@@ -314,7 +282,51 @@ function EternalLib:CreateWindow(TitleText)
     end
     coroutine.wrap(ELRWI_fake_script)()
 
+local TabHolder = {}
+
+function TabHolder:CreateTabButton(TabTextButton)
+
+local TabHolder = Instance.new("ScrollingFrame")
+    local UIPadding = Instance.new("UIPadding")
+    local UIListLayout = Instance.new("UIListLayout")
+    local TabText = Instance.new("TextLabel")
+
+    TabHolder.Name = "TabHolder"
+    TabHolder.Parent = EternalXMain
+    TabHolder.Active = true
+    TabHolder.BackgroundColor3 = Color3.fromRGB(32, 32, 32)
+    TabHolder.BorderColor3 = Color3.fromRGB(32, 32, 32)
+    TabHolder.Position = UDim2.new(0.00153846154, 0, 0.096926488, 0)
+    TabHolder.Size = UDim2.new(0.232000008, 0, 0.902446985, -50)
+    TabHolder.ZIndex = -1
+    TabHolder.CanvasSize = UDim2.new(0, 0, 0, 690)
+    TabHolder.ScrollBarThickness = 6
+    
+    UIPadding.Parent = TabHolder
+    UIPadding.PaddingBottom = UDim.new(0, 8)
+    UIPadding.PaddingTop = UDim.new(0, 8)
+    
+    UIListLayout.Parent = TabHolder
+    UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+    
+    TabText.Name = "TabText"
+    TabText.Parent = TabHolder
+    TabText.BackgroundTransparency = 1.000
+    TabText.Position = UDim2.new(0, 35, 0, 0)
+    TabText.Size = UDim2.new(1, 0, 0, 30)
+    TabText.Font = Enum.Font.GothamMedium
+    TabText.Text = TabTextButton
+    TabText.TextColor3 = Color3.fromRGB(240, 240, 240)
+    TabText.TextSize = 14.000
+    TabText.TextTransparency = 0.400
+    TabText.TextXAlignment = Enum.TextXAlignment.Left
+
+	end
+	
+	return TabHolder
 end
 
 return EternalLib
+
+
     
