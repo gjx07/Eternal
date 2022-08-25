@@ -1,6 +1,6 @@
-local WindowTable = {} -- We will be inserting Main Function in here
+local EternalLib = {} -- We will be inserting Main Function in here
 
-function WindowTable:CreateWindow(TitleName)
+function EternalLib:CreateWindow(TitleName)
 
 local EternalX = Instance.new("ScreenGui")
 local EternalXMain = Instance.new("Frame")
@@ -279,5 +279,6 @@ local function HYAENNB_fake_script() -- settings.LocalScript
 	
 end
 coroutine.wrap(HYAENNB_fake_script)()
+	end
 	
-	return WindowTable
+	return EternalLib
