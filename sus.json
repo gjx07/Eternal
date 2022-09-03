@@ -1,7 +1,7 @@
 {
     "StatusData": {
         "EzHub": "Online",
-        "EzAPI": "Online",
+        "EzAPI": "Offline",
         "EzLauncher": "Online"
     },
     "LatestVersion": "https://raw.githubusercontent.com/debug420/Ez-Hub/master/EzHub.lua",
